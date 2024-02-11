@@ -8,8 +8,10 @@ import {
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
 export default function CreateListing() {
+  const { t } = useTranslation("global");
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [files, setFiles] = useState([]);
@@ -18,6 +20,8 @@ export default function CreateListing() {
     name: '',
     description: '',
     address: '',
+    country: '',
+    city: '',
     type: 'rent',
     bedrooms: 1,
     bathrooms: 1,
@@ -51,6 +55,7 @@ export default function CreateListing() {
           setUploading(false);
         })
         .catch((err) => {
+          console.log(err);
           setImageUploadError('Image upload failed (2 mb max per image)');
           setUploading(false);
         });
@@ -198,7 +203,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.type === 'sale'}
               />
-              <span>Sell</span>
+              <span>{t('createListing.sell')}</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -208,7 +213,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.type === 'rent'}
               />
-              <span>Rent</span>
+              <span>{t('createListing.rent')}</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -228,7 +233,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.furnished}
               />
-              <span>Furnished</span>
+              <span>{t('createListing.furnished')}</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -253,7 +258,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
-              <p>Beds</p>
+              <p>{t('createListing.beds')}</p>
             </div>
             <div className='flex items-center gap-2'>
               <input

@@ -5,3 +5,69 @@
 body{
     background-color: rgb(241, 245, 241);
 }
+
+.team-img {
+    width: 140px;
+    border-radius: 50%;
+    display: inline-flex;
+}
+.team-info {
+    font-style: italic;
+    color: #cbcbcb;
+}
+.team-item {
+    background: #ffffff;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px 0;
+    padding: 50px 20px 40px 20px;
+    border-radius: 8px 8px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.team-item:hover {
+    background: #cccccc;
+}
+
+.team-item h3 {
+    margin: 20px 0 1px 0 !important;
+    color: #454545;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.section-subtitle {
+    white-space: pre-line;
+}
+
+
+.dropdown {
+    @apply w-full lg:max-w-[296px] cursor-pointer;
+}
+
+.dropdown-btn {
+    @apply flex h-[64px] items-center px-[18px] border rounded-lg;
+}
+
+.dropdown-icon-primary {
+    @apply text-2xl mr-[18px] text-slate-700;
+}
+
+.dropdown-icon-secondary {
+    @apply text-2xl text-slate-700 ml-auto;
+}
+
+.dropdown-menu {
+    @apply px-6 py-8 text-[15px] space-y-6
+    shadow-md bg-white absolute w-full z-10 list-none rounded-b-lg;
+}

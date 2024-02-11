@@ -1,0 +1,58 @@
+{
+  "global": {
+    "somethingWentWrong": "x Something went wrong.",
+    "title": "x Find your next home.",
+    "subtitle": "x Sahand Estate is the best place to find your next perfect place to live..\nWe have a wide range of properties for you to choose from.",
+    "goToSearch": "x Search for a house...",
+    "loading": "x Loading"
+  },
+  "createListing": {
+    "sell": "x Sell",
+    "rent": "x Rent",
+    "furnished": "x Furnished",
+    "beds": "x Beds"
+  },
+  "home": {
+    "showMorePlaces": "x Show more places...",
+    "recentPlacesForRent": "x Recent places for rent",
+    "showMoreRecentPlacesForRent": "x Show more places for rent",
+    "recentPlacesForSale": "x Recent places for sale",
+    "showMoreRecentPlacesForSale": "x Show more places for sale"
+  },
+  "listing": {
+    "forSale": "x For Sale",
+    "forRent": "x For Rent",
+    "parking": "x Parking spot",
+    "noParking": "x No parking",
+    "furnished": "x Furnished",
+    "unfurnished": "x Unfurnished",
+    "bath": "x bath",
+    "baths": "x baths",
+    "bed": "x bed",
+    "beds": "x beds"
+  },
+  "header": {
+    "chooseLanguage": "x Choose Language:",
+    "home": "x Home",
+    "about": "x About"
+  },
+  "search": {
+    "term": "x Search term",
+    "listingResult": "x Listing results",
+    "search": "x Search",
+    "sort": "x Sort",
+    "priceHtoL": "x Price high to low",
+    "priceLtoH": "x Price low to high",
+    "latest": "x Latest",
+    "oldest": "x Oldest",
+    "rentAndSale": "x Rent and Sale",
+    "rent": "x Rent",
+    "sale": "x Sale",
+    "offer": "x Offer",
+    "parking": "x Parking",
+    "furnished": "x Furnished",
+    "": "",
+    "amenities": "x Amenities",
+    "type": "x Type"
+  }
+}

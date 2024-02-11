@@ -8,8 +8,10 @@ import {
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
 export default function CreateListing() {
+  const { t } = useTranslation("global");
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const params = useParams();
@@ -19,6 +21,8 @@ export default function CreateListing() {
     name: '',
     description: '',
     address: '',
+    country: '',
+    city: '',
     type: 'rent',
     bedrooms: 1,
     bathrooms: 1,
@@ -172,7 +176,7 @@ export default function CreateListing() {
   return (
     <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
-        Update a Listing
+        {t('listing.update')}
       </h1>
       <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
         <div className='flex flex-col gap-4 flex-1'>
@@ -204,6 +208,24 @@ export default function CreateListing() {
             required
             onChange={handleChange}
             value={formData.address}
+          />
+          <input
+            type='text'
+            placeholder='City'
+            className='border p-3 rounded-lg'
+            id='city'
+            required
+            onChange={handleChange}
+            value={formData.city}
+          />
+          <input
+            type='text'
+            placeholder='Country'
+            className='border p-3 rounded-lg'
+            id='country'
+            required
+            onChange={handleChange}
+            value={formData.country}
           />
           <div className='flex gap-6 flex-wrap'>
             <div className='flex gap-2'>

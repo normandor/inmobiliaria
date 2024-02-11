@@ -2,8 +2,10 @@ import { FaSearch } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t } = useTranslation("global");
   const { currentUser } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
@@ -27,8 +29,8 @@ export default function Header() {
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
           <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
-            <span className='text-slate-500'>Sahand</span>
-            <span className='text-slate-700'>Estate</span>
+            <span className='text-slate-500'>TEST</span>
+            <span className='text-slate-700'>TEST2</span>
           </h1>
         </Link>
         <form
@@ -37,7 +39,7 @@ export default function Header() {
         >
           <input
             type='text'
-            placeholder='Search...'
+            placeholder={t('search.search')+'...'}
             className='bg-transparent focus:outline-none w-24 sm:w-64'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -49,12 +51,12 @@ export default function Header() {
         <ul className='flex gap-4'>
           <Link to='/'>
             <li className='hidden sm:inline text-slate-700 hover:underline'>
-              Home
+              {t("header.home")}
             </li>
           </Link>
           <Link to='/about'>
             <li className='hidden sm:inline text-slate-700 hover:underline'>
-              About
+              {t("header.about")}
             </li>
           </Link>
           <Link to='/profile'>
