@@ -20,6 +20,7 @@ export default function Search() {
 
   const [loading, setLoading] = useState(false);
   const [listings, setListings] = useState([]);
+  const [cities, setCities] = useState(['Location (any)']);
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function Search() {
     const offerFromUrl = urlParams.get('offer');
     const sortFromUrl = urlParams.get('sort');
     const orderFromUrl = urlParams.get('order');
+    const cityFromUrl = urlParams.get('city');
 
     if (
       searchTermFromUrl ||
@@ -39,6 +41,7 @@ export default function Search() {
       furnishedFromUrl ||
       offerFromUrl ||
       sortFromUrl ||
+      cityFromUrl ||
       orderFromUrl
     ) {
       setSidebardata({
@@ -49,6 +52,7 @@ export default function Search() {
         offer: offerFromUrl === 'true' ? true : false,
         sort: sortFromUrl || 'created_at',
         order: orderFromUrl || 'desc',
+        city: cityFromUrl || 'Location (any)',
       });
     }
 
@@ -67,7 +71,15 @@ export default function Search() {
       setLoading(false);
     };
 
+    const fetchCities = async () => {
+      const res = await fetch(`/api/listing/get`);
+      const data = await res.json();
+      let citiesArray = data.map((listing) => listing.city);
+      setCities(['Location (any)', ...new Set(citiesArray)]);
+    };
+
     fetchListings();
+    fetchCities();
   }, [location.search]);
 
   const handleChange = (e) => {
@@ -102,6 +114,16 @@ export default function Search() {
 
       setSidebardata({ ...sidebardata, sort, order });
     }
+
+    if (e.target.id === 'city') {
+      const city = e.target.value;
+      setSidebardata({ ...sidebardata, city });
+    }
+
+    if (e.target.id === 'propertyType') {
+      const propertyType = e.target.value;
+      setSidebardata({ ...sidebardata, propertyType });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -109,11 +131,23 @@ export default function Search() {
     const urlParams = new URLSearchParams();
     urlParams.set('searchTerm', sidebardata.searchTerm);
     urlParams.set('type', sidebardata.type);
+
+    if (sidebardata.propertyType !== undefined) {
+      urlParams.set('propertyType', sidebardata.propertyType);
+    }
+
     urlParams.set('parking', sidebardata.parking);
     urlParams.set('furnished', sidebardata.furnished);
     urlParams.set('offer', sidebardata.offer);
     urlParams.set('sort', sidebardata.sort);
     urlParams.set('order', sidebardata.order);
+
+    if (
+      sidebardata.city !== 'Location (any)' &&
+      sidebardata.city !== undefined
+    ) {
+      urlParams.set('city', sidebardata.city);
+    }
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
   };
@@ -219,12 +253,34 @@ export default function Search() {
             <select
               onChange={handleChange}
               defaultValue={'house'}
-              id="property_type"
+              id="propertyType"
               className="border rounded-lg p-3"
             >
-              <option value="property_type_house">{t('search.property_type_house')}</option>
-              <option value="property_type_appartment">{t('search.property_type_appartment')}</option>
-              <option value="property_type_villa">{t('search.property_type_villa')}</option>
+              <option value="property_type_house">
+                {t('search.property_type_house')}
+              </option>
+              <option value="property_type_appartment">
+                {t('search.property_type_appartment')}
+              </option>
+              <option value="property_type_villa">
+                {t('search.property_type_villa')}
+              </option>
+            </select>
+          </div>
+          <div className="flex items-center gap-2">
+            <label className="font-semibold">{t('search.city')}:</label>
+            <select
+              onChange={handleChange}
+              id="city"
+              className="border rounded-lg p-3"
+            >
+              {cities.map((city) => {
+                return (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                );
+              })}
             </select>
           </div>
           <div className="flex items-center gap-2">

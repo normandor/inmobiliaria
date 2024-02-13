@@ -19,7 +19,7 @@ const SearchProperty = ({ saleListings }) => {
   });
 
   const uniqueCities = ['Location (any)', ...new Set(cities)];
-  console.log(uniqueCities);
+
   const handleClick = () => {
     const params = new URLSearchParams();
     if (city) {

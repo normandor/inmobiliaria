@@ -109,6 +109,11 @@ export const getListings = async (req, res, next) => {
       searchConditions = { ...searchConditions, city };
     }
 
+    let propertyType = req.query.propertyType || undefined;
+    if (propertyType) {
+      searchConditions = { ...searchConditions, propertyType };
+    }
+
     const listings = await Listing.find(searchConditions)
       .sort({ [sort]: order })
       .limit(limit)

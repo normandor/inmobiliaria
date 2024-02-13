@@ -19,10 +19,11 @@ export default function ListingItem({ listing }) {
           <p className='truncate text-lg font-semibold text-slate-700'>
             {listing.name}
           </p>
+          <p className='text-xs text-gray-600'>{listing.propertyType}</p>
           <div className='flex items-center gap-1'>
             <MdLocationOn className='h-4 w-4 text-green-700' />
             <p className='text-sm text-gray-600 truncate w-full'>
-              {listing.address}
+              {listing.address} - {listing.city}
             </p>
           </div>
           <p className='text-sm text-gray-600 line-clamp-2'>
