@@ -34,10 +34,12 @@
   "header": {
     "chooseLanguage": "x Choose Language:",
     "home": "x Home",
+    "signin": "x Sign in",
     "about": "x About"
   },
   "search": {
     "term": "x Search term",
+    "city": "x City",
     "listingResult": "x Listing results",
     "search": "x Search",
     "sort": "x Sort",
