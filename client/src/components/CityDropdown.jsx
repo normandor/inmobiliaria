@@ -4,9 +4,13 @@ import { RiMapPinLine, RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 
 import { Menu } from '@headlessui/react';
 
-const CountryDropdown = ({ countries }) => {
+const CityDropdown = ({ setSearchTerm, cities }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [country, setCountry] = useState('Location (any)');
+  const [city, setCity] = useState('Location (any)');
+  const setCityAndEmit = (city) => {
+    setCity(city);
+    setSearchTerm('city', city);
+  };
 
   return (
     <Menu as="div" className="dropdown relative">
@@ -16,7 +20,7 @@ const CountryDropdown = ({ countries }) => {
       >
         <RiMapPinLine className="dropdown-icon-primary" />
         <div>
-          <div className="text-[15px] font-medium leading-tight">{country}</div>
+          <div className="text-[15px] font-medium leading-tight">{city}</div>
           <div className="text-[13px]">Select your place</div>
         </div>
         {isOpen ? (
@@ -26,15 +30,15 @@ const CountryDropdown = ({ countries }) => {
         )}
       </Menu.Button>
       <Menu.Items className="dropdown-menu">
-        {countries.map((country, index) => {
+        {cities.map((city, index) => {
           return (
             <Menu.Item
               className="cursor-pointer hover:text-slate-700 transition"
-              onClick={() => setCountry(country)}
+              onClick={() => setCityAndEmit(city)}
               as="li"
               key={index}
             >
-              {country}
+              {city}
             </Menu.Item>
           );
         })}
@@ -43,4 +47,4 @@ const CountryDropdown = ({ countries }) => {
   );
 };
 
-export default CountryDropdown;
+export default CityDropdown;

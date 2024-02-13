@@ -215,6 +215,19 @@ export default function Search() {
             </div>
           </div>
           <div className="flex items-center gap-2">
+            <label className="font-semibold">{t('search.propertyType')}:</label>
+            <select
+              onChange={handleChange}
+              defaultValue={'house'}
+              id="property_type"
+              className="border rounded-lg p-3"
+            >
+              <option value="property_type_house">{t('search.property_type_house')}</option>
+              <option value="property_type_appartment">{t('search.property_type_appartment')}</option>
+              <option value="property_type_villa">{t('search.property_type_villa')}</option>
+            </select>
+          </div>
+          <div className="flex items-center gap-2">
             <label className="font-semibold">{t('search.sort')}:</label>
             <select
               onChange={handleChange}

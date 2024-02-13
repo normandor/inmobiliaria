@@ -24,6 +24,7 @@ export default function CreateListing() {
     country: '',
     city: '',
     type: 'rent',
+    propertyType: '',
     bedrooms: 1,
     bathrooms: 1,
     regularPrice: 50,
@@ -133,6 +134,7 @@ export default function CreateListing() {
 
     if (
       e.target.type === 'number' ||
+      e.target.type === 'select-one' ||
       e.target.type === 'text' ||
       e.target.type === 'textarea'
     ) {
@@ -227,6 +229,21 @@ export default function CreateListing() {
             onChange={handleChange}
             value={formData.country}
           />
+          
+          {/* https://www.youtube.com/watch?v=CHe_QJcTK5Y&t=5744s */}
+          {/* https://www.youtube.com/watch?v=VAaUy_Moivw */}
+          <select
+            onChange={handleChange}
+            value={formData.propertyType}
+            placeholder={t('search.propertyType')}
+            id="propertyType"
+            className="border rounded-lg p-3"
+          >
+            <option value="property_type_house">{t('search.property_type_house')}</option>
+            <option value="property_type_appartment">{t('search.property_type_appartment')}</option>
+            <option value="property_type_villa">{t('search.property_type_villa')}</option>
+          </select>
+          
           <div className='flex gap-6 flex-wrap'>
             <div className='flex gap-2'>
               <input
