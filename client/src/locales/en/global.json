@@ -60,5 +60,16 @@
     "": "",
     "amenities": "x Amenities",
     "type": "x Type"
+  },
+  "contact": {
+    "contact": "x Please contact leave us a note for more information about this property.",
+    "name": "x Name",
+    "email": "x Email",
+    "phone": "x Phone",
+    "message": "x Message",
+    "send": "x Send"
+  },
+  "meettheteam": {
+    "header": "x The team behind Pacifico"
   }
 }

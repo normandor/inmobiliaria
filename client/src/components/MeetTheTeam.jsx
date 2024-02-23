@@ -1,6 +1,8 @@
 import MeetTheTeamItem from "./MeetTheTeamItem";
+import { useTranslation } from 'react-i18next';
 
 export default function MeetTheTeam() {
+  const { t } = useTranslation('global');
   let userTestStatus = [
     { function: "0", name: "Available" },
     { function: "1", name: "Ready" },
@@ -12,7 +14,7 @@ export default function MeetTheTeam() {
   return (
     <div className="row">
       <div className="col-md-12 text-center align-center">
-        <h2 className="text-3xl font-bold mb-4 text-slate-700">The team behind Pacifico</h2>
+        <h2 className="text-3xl font-bold mb-4 text-slate-700">{t('meettheteam.header')}</h2>
         <p className="section-subtitle text-gray-400">{message}</p>
         <div
           className="max-w-6xl mx-auto p-3 flex gap-8 my-10"

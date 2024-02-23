@@ -13,7 +13,7 @@ import global_es from "./locales/es/global.json";
 i18next.init({
   interpolation: { escapeValue: false },
   lng: "auto",
-  fallbackLng: "en",
+  fallbackLng: "es",
   resources: {
     en: {
       global: global_en,

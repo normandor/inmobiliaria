@@ -1,9 +1,75 @@
 {
+  "global": {
+    "somethingWentWrong": "x Algo salió mal.",
+    "title": "x Encuentra tu próximo hogar.",
+    "subtitle": "x Sahand Estate es el mejor lugar para encontrar tu próximo lugar perfecto para vivir.\nTenemos una amplia gama de propiedades para que elijas.",
+    "goToSearch": "x Busca una casa...",
+    "loading": "x Cargando"
+  },
+  "createListing": {
+    "sell": "x Vender",
+    "rent": "x Alquilar",
+    "furnished": "x Amueblado",
+    "beds": "x Habitaciones"
+  },
+  "home": {
+    "showMorePlaces": "x Mostrar más lugares...",
+    "recentPlacesForRent": "x Lugares recientes para alquilar",
+    "showMoreRecentPlacesForRent": "x Mostrar más lugares para alquilar",
+    "recentPlacesForSale": "x Lugares recientes en venta",
+    "showMoreRecentPlacesForSale": "x Mostrar más lugares en venta"
+  },
+  "listing": {
+    "forSale": "x En Venta",
+    "forRent": "x En Alquiler",
+    "parking": "x Plaza de aparcamiento",
+    "noParking": "x Sin aparcamiento",
+    "furnished": "x Amueblado",
+    "unfurnished": "x Sin amueblar",
+    "bath": "x baño",
+    "baths": "x baños",
+    "bed": "x habitación",
+    "beds": "x habitaciones"
+  },
   "header": {
-    "chooseLanguage": "Elija idioma:"
+    "chooseLanguage": "x Elija Idioma:",
+    "home": "x Inicio",
+    "signin": "x Iniciar sesión",
+    "about": "x Acerca de"
   },
   "search": {
-    "term": "Búsqueda",
-    "listingResult": "Resultados"
+    "term": "x Término de búsqueda",
+    "city": "x Ciudad",
+    "listingResult": "x Resultados de la búsqueda",
+    "search": "x Buscar",
+    "sort": "x Ordenar",
+    "priceHtoL": "x Precio alto a bajo",
+    "priceLtoH": "x Precio bajo a alto",
+    "latest": "x Más reciente",
+    "oldest": "x Más antiguo",
+    "rentAndSale": "x Alquiler y Venta",
+    "propertyType": "x Tipo de propiedad",
+    "property_type_villa": "x Villa",
+    "property_type_appartment": "x Apartamento",
+    "property_type_house": "x Casa",
+    "rent": "x Alquiler",
+    "sale": "x Venta",
+    "offer": "x Oferta",
+    "parking": "x Aparcamiento",
+    "furnished": "x Amueblado",
+    "": "",
+    "amenities": "x Comodidades",
+    "type": "x Tipo"
+  },
+  "contact": {
+    "contact": "x Por favor, contáctenos y déjenos una nota para obtener más información sobre esta propiedad.",
+    "name": "x Nombre",
+    "email": "x Correo electrónico",
+    "phone": "x Teléfono",
+    "message": "x Mensaje",
+    "send": "x Enviar"
+  },
+  "meettheteam": {
+    "header": "x Conoce al equipo"
   }
 }

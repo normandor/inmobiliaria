@@ -74,5 +74,20 @@ body{
 
 .swiper {
     flex-shrink: 100 !important;
-    @apply max-w-4xl;
+    @apply max-w-2xl;
 }
+
+.wrapifnarrow {
+    @media (width <= 1200px) {
+        flex-wrap: wrap;
+    }
+    @media (width > 1200px) {
+        flex-wrap: nowrap;
+    }
+  }
+
+  .collage-item {
+    border: 1px solid black;
+    flex: 0 0 50%;
+    padding: 10px;
+  }
